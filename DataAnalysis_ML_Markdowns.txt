@@ -1,0 +1,17 @@
+# Project data
+The entire dataset I'm using in this project is scraped from https://growdiaries.com/, as one of the significant weed-growing communities in the world, it holds a large amount of data. Each row represents a data point, each column represents one of the diary features.
+# Initial analysis and data refinement:
+
+Strating with testing which one of the dry/wet bud weight have less null values and set it as the target variable. 
+After, I was looking for the number of null values in each feature nd wrote it into a dictionery, that's the way to find out the features contains null and how many.
+The other features but gremination can be filled with the median, different category or any rational way that fits the each feature. For the germination I will look for the unique values and try to figure it out from it.
+As I see it, we have more null values than unique values so I'll drop it.
+# A grower might not apply any grow technique so the null values will be replaced by zeros
+Now, there are no null values in the dataset, now it is ready to convert it
+# EDA & Visualization
+# The correlation between likes and comments is quite obvious, and later I will use PCA to create new orthogonal basis vectors for it, in order to assess whether user engagement could lend credibility to a diary.
+# Outliers treatment
+# Before removing bud wet weight outliers I disire that my traget vector will have values higher than 1. As I see it, less than 1 oz of harvest is really small growth
+# Following the previous question about user engagement, now I'm trying to find out if there is a direct correlation between the number of finances and time invested in a diary (for example, if all highly engaged diaries tend to contain plenty of nutrients kinds?)
+# Preforming PCA to likes and comments + Changing the indecies to diary_name
+In this point we are ready to preform the supervised machine learning.We can see the model kind of predicts the trends but it's lands quite far and having hard time to predict the high values so I'll try with smaller 'bud_wet_weight'.Of course that if we limit the target values the model values will have less room for mistake, I beleive that the model having hard time to deal with the picks so if I had collected more data the prediction was quite better.
